@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramsArray = [];
+
+      // Iterate over all parameters and store them in an array
+      urlParams.forEach((value, key) => {
+        paramsArray.push(`${key}=${value}`);
+      });
+
+      // Join all the parameters with a plus sign
+      const startappParam = paramsArray.join('+');
+
+      // Construct the new URL
+      const telegramUrl = `https://t.me/kattana_broker_bot/mini_app?startapp=${encodeURIComponent(startappParam)}`;
+
+      // Redirect to the Telegram Mini App URL
+      window.location.replace(telegramUrl);
+    });
+  </script>
+</head>
+<body>
+  <h1>Redirecting to Telegram...</h1>
+</body>
+</html>
